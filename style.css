@@ -40,23 +40,44 @@ input:focus{
 
 }
 
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 
-.strength-bar{
+.password-wrapper input {
+    flex: 1;
+}
+
+.password-wrapper button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: -35px;
+    font-size: 18px;
+}
+
+
+
+/* Strength Bar */
+.strength-bar {
     width: 100%;
-    height: 10px;
+    height: 12px;
     background: #eee;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-bottom: 10px;
     overflow: hidden;
 }
 
-#strength-fill{
+#strength-fill {
     height: 100%;
     width: 0%;
     background: red;
-    border-radius: 8px;
-    transition: width 0.3s, background 0.3s;
+    border-radius: 10px;
+    transition: width 0.5s ease, background 0.5s ease;
 }
+
 #strength-text{
     margin: 10px 0;
     font-weight: bold;

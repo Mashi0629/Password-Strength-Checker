@@ -57,3 +57,31 @@ password.addEventListener('input', () => {
         strenghText.className = "strong";
     }
 });
+
+// Strength Bar Fill Colors
+function getBarColor(strength) {
+    switch(strength){
+        case 1: return "linear-gradient(to right, #ff4b5c, #ff6f61)"; // weak
+        case 2: return "linear-gradient(to right, #ffa500, #ffcc00)"; // medium
+        case 3: return "linear-gradient(to right, #ffa500, #ffcc00)"; // medium
+        case 4: return "linear-gradient(to right, #00b894, #55efc4)"; // strong
+        default: return "red";
+    }
+}
+
+// Update strength bar
+strengthFill.style.width = width + "%";
+strengthFill.style.background = getBarColor(strength);
+
+
+const toggle = document.getElementById("toggle");
+toggle.addEventListener("click", () => {
+    if(password.type === "password"){
+        password.type = "text";
+        toggle.textContent = "🙈";
+    } else {
+        password.type = "password";
+        toggle.textContent = "👁️";
+    }
+});
+
